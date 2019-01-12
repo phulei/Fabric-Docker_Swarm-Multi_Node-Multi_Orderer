@@ -2,7 +2,7 @@
 
 set -x
 
-API_PATH=${PWD}/../../fabric-payment-sample-api
+API_PATH=${PWD}/../../api
 CHANNEL_NAME="fabric-sample"
 CHAINCODE_NAME="fabric-payment"
 CA_ADMIN_PASSWORD="adminpw"
