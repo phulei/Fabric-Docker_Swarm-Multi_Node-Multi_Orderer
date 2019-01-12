@@ -6,7 +6,7 @@ FABRIC_CFG_PATH=${PWD}
 CHANNEL_NAME=fabric-sample
 CHAINCODE_NAME=fabric-payment
 USER_NAME=fabricuser
-API_PATH=${PWD}/../../fabric-payment-sample-api
+API_PATH=${PWD}/../../api
 GOPATH=/home/hexoindia/go
 CA_ADMIN_PASSWORD=adminpw
 

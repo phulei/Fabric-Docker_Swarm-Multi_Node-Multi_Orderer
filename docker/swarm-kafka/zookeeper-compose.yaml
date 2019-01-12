@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 
 networks:
   fabric-sample-nw:
@@ -21,7 +21,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == instance-1
+          - node.hostname == instance-1
 
   zookeeper1:
     hostname: zookeeper1
@@ -39,7 +39,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == instance-2
+          - node.hostname == instance-2
 
   zookeeper2:
     hostname: zookeeper2
@@ -57,4 +57,4 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.type == instance-3
+          - node.hostname == instance-3
