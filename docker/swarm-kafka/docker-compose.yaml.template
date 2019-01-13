@@ -330,14 +330,15 @@ services:
     tty: true
     environment:
       - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_ID=cli
+      - CORE_PEER_ADDRESS=peer0:7051
       - CORE_PEER_LOCALMSPID=Org1MSP
       - CORE_CHAINCODE_KEEPALIVE=10
     working_dir: /etc/hyperledger/artifacts
     command: /bin/bash
     volumes:
-      - /home/hexoindia/go/src/github.com/nmatsui/fabric-payment-sample-chaincode/:/opt/gopath/src/github.com/nmatsui/fabric-payment-sample-chaincode/
       - shared-genesis-store:/etc/hyperledger/genesis_store
     networks:
       - fabric-sample-nw
@@ -365,8 +366,6 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/api:/etc/hyperledger/api
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/scripts:/etc/hyperledger/scripts
       - shared-key-store:/etc/hyperledger/key_store
     networks:
       - fabric-sample-nw
@@ -397,8 +396,6 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/api:/etc/hyperledger/api
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/scripts:/etc/hyperledger/scripts
       - shared-key-store:/etc/hyperledger/key_store
     networks:
       - fabric-sample-nw
@@ -429,8 +426,6 @@ services:
     ports:
       - 3002:3000
     volumes:
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/api:/etc/hyperledger/api
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/scripts:/etc/hyperledger/scripts
       - shared-key-store:/etc/hyperledger/key_store
     networks:
       - fabric-sample-nw
@@ -461,8 +456,6 @@ services:
     ports:
       - 3003:3000
     volumes:
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/api:/etc/hyperledger/api
-      - /home/hexoindia/Fabric-Docker_Swarm-Multi_Node-Multi_Orderer/api/scripts:/etc/hyperledger/scripts
       - shared-key-store:/etc/hyperledger/key_store
     networks:
       - fabric-sample-nw
